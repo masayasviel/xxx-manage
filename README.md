@@ -27,3 +27,10 @@ make down_v
 ```sh
 make migrate
 ```
+
+# reference
+
+- [HTTP レスポンスステータスコード](https://developer.mozilla.org/ja/docs/Web/HTTP/Status)
+- [zod](https://zod.dev/)
+- [Prisma Data Model](https://www.prisma.io/docs/concepts/components/prisma-schema/data-model)
+- [Prisma Client API reference](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#create)
