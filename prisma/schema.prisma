@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Device {
+  id                 Int       @id @default(autoincrement())
+  createdAt          DateTime  @default(now())
+  updateAt           DateTime  @updatedAt
+  maker              String?   @db.VarChar(255)
+  category           String    @db.VarChar(2)
+  name               String    @db.VarChar(255)
+  tepla              String    @db.VarChar(255)
+  os                 String?   @db.VarChar(255)
+  osVersion          String?   @db.VarChar(255)
+  isEmergencyContact Boolean   @default(false)
+  isCapitalization   Boolean   @default(false)
+  amount             Int       @default(0)
+  purchaseDate       DateTime?
+  storageLocate      String?   @db.VarChar(255)
+  deviceStatus       String    @db.VarChar(2)
+  remarks            String?   @db.Text
+  History            History[]
+}
+
+model History {
+  id               Int      @id @default(autoincrement())
+  createdAt        DateTime @default(now())
+  updateAt         DateTime @updatedAt
+  deviceId         Int
+  device           Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  lendingDestinate String   @db.VarChar(255)
+  returnDate       DateTime
+  remarks          String?  @db.Text
+}
