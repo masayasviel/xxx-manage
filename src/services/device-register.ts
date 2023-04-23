@@ -21,5 +21,5 @@ export const register = async (data: DeviceRegisterRequestType): Promise<void> =
             deviceStatus: data.deviceStatus,
             remarks: data.remarks ?? null,
         }
-    })
-}
+    });
+};

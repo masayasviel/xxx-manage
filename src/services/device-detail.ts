@@ -6,12 +6,10 @@ import { NotFoundError } from '../core/error';
 export const detail = async (id: number): Promise<Device> => {
     const client = DbClient.instance;
     const detail = await client.device.findUnique({
-        where: {
-            id
-        }
+        where: { id }
     });
     if (!detail) {
         throw new NotFoundError();
     }
     return detail;
-}
+};

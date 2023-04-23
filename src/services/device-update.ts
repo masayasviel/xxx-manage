@@ -29,4 +29,4 @@ export const update = async (id: number, data: DeviceUpdateRequestType): Promise
             remarks: data.remarks ?? null,
         }
     });
-}
+};

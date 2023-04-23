@@ -14,7 +14,7 @@ import { list } from '../services/device-list';
 import { register } from '../services/device-register';
 import { detail } from '../services/device-detail';
 import { update } from '../services/device-update';
-
+import { deviceDelete } from '../services/device-delete';
 
 const app = express();
 
@@ -146,8 +146,8 @@ app.delete('/:id', async (
 ): Promise<void> => {
     const id = req.params.id;
     try {
-        const responseData = await detail(id);
-        res.status(200).send(responseData);
+        const responseData = await deviceDelete(id);
+        res.status(201);
     } catch (e) {
         if (e instanceof NotFoundError) {
             res.status(404).send({

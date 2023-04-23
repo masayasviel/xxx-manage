@@ -13,4 +13,4 @@ export const deviceDelete = async (id: number): Promise<void> => {
     await client.device.delete({
         where: { id }
     });
-}
+};
