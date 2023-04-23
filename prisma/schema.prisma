@@ -38,5 +38,6 @@ model History {
   device           Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
   lendingDestinate String   @db.VarChar(255)
   returnDate       DateTime
+  isReturn         Boolean  @default(false)
   remarks          String?  @db.Text
 }
