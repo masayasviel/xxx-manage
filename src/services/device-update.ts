@@ -1,5 +1,3 @@
-import { Device } from '@prisma/client';
-
 import { DbClient } from '../core/db-client';
 import { NotFoundError } from '../core/error';
 import { DeviceUpdateRequestType } from '../serializers/device';
